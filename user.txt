@@ -1,11 +1,11 @@
 create user {
-- uid (firebaseden geliyor)*
-- email (firebaseden geliyor)*
+- uid (Coming from Firebase)*
+- email (Coming from Firebase)*
 - username (custom)*
 - biografi (custom)
 - profile photo (custom)*
 }
 
 login user {
-    firebase üzerinden login işlemi yapılıcak ve firebaseden gelen uid üzerinden kullanıcı verileri çekilicek
+    Login will be done via firebase and user data will be retrieved via the uid from firebase.
 }
