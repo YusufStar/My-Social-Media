@@ -55,13 +55,13 @@ function Home() {
           <input value={post?.Photo} type="text" onChange={(e) => setPost(item => ({...item, Photo:e.target.value}))} className='py-3 px-3 w-full rounded-xl outline-none text-white bg-darkprimary text-sm' placeholder='Image Url'/>
           <button type="submit" className="w-full py-3 text-[14px] rounded-lg text-white bg-blue cursor-pointer outline-none flex items-center justify-center hover:opacity-80">{!loading ? "Post":<CircularProgress size={21}/>}</button>
         </form>
-        <div className="h-auto w-full min-h-screen items-center flex flex-col gap-3">
+        <div className="h-auto w-full min-h-screen items-center flex flex-col">
         {data?.users?.map((allusers) => {
             return (
-              <div key={allusers?.Username}>
+              <div className='h-auto w-auto flex flex-col' key={allusers?.Username}>
               {allusers?.posts?.map((post, i) => {
                 return(
-                  <div key={`${allusers.uid}${post.id}${i}`} className='w-[600px] pt-5 py-3 px-3 bg-darkbg rounded-xl flex flex-col'>
+                  <div key={`${allusers.uid}${post.id}${i}`} className='w-[600px] my-3 h-auto py-4 px-3 bg-darkbg rounded-xl flex flex-col'>
                   <div className="h-auto w-full flex gap-3 items-center">
                     <img src={allusers.ProfilePhoto} className="w-10 h-10 rounded-full" />
                     <h1 className='text-white/60'>{allusers.Username}</h1>
