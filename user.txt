@@ -4,8 +4,6 @@ create user {
 - username (custom)*
 - biografi (custom)
 - profile photo (custom)*
-- birthday (custom)*
-- gender (custom)*
 }
 
 login user {
