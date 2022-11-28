@@ -27,7 +27,6 @@ function Router() {
           const data = snapshot.val()
           setData(data)
         } else {
-          console.log("No data available");
         }
       }).catch((error) => {
         console.error(error);
@@ -56,7 +55,7 @@ function Router() {
         </Routes>
             ):(
         <Routes>
-              <Route index path='*' element={<Login/>}/>
+              <Route index path='/*' element={<Login/>}/>
               <Route path='/Register' element={<Register/>}/>
         </Routes>
             )}

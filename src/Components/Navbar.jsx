@@ -55,7 +55,6 @@ function Navbar() {
               return dt
             }
           }).map((userdata) => {
-            console.log(userdata)
             return (
               <div key={userdata.uid} className={`w-full h-auto py-2 ${modal ? "flex" : "hidden"} gap-3 px-3 py-2 w-full bg-darkprimary rounded-xl items-center`}>
                 <img src={userdata?.ProfilePhoto} className="h-10 w-10 rounded-full" />

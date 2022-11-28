@@ -54,7 +54,7 @@ function Profile() {
           <h1 className='w-full h-auto py-3 text-sm font-semibold text-white'>{post.Title}</h1>
           {post.Photo && <img src={post.Photo} className="w-full rounded-xl"/>}
           {post?.replies?.map((rply) => (
-              <div className='w-full h-auto flex gap-3 py-2 px-3 bg-darkprimary mt-2 rounded-xl flex-wrap items-center'>
+              <div key={rply.Comment} className='w-full h-auto flex gap-3 py-2 px-3 bg-darkprimary mt-2 rounded-xl flex-wrap items-center'>
                 <img src={rply.ProfilePhoto} className="w-10 h-10 rounded-full"/>
                 <h1 className='text-sm w-[90%] text-white/60'>{rply.Username}</h1>
                 <h1 className='w-full h-auto text-sm px-3 textdarktext'>{rply.Comment}</h1>

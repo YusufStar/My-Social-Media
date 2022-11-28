@@ -19,7 +19,7 @@ function RightBar() {
             return data
         }
         }).map((Friend) => (
-          <div className="h-full py-2 px-2 flex items-center gap-3 hover:bg-darkprimary rounded-xl transition-all duration-150 cursor-pointer">
+          <div key={Friend?.Username} className="h-full py-2 px-2 flex items-center gap-3 hover:bg-darkprimary rounded-xl transition-all duration-150 cursor-pointer">
             <img src={Friend.ProfilePhoto} className="h-10 w-10 rounded-full"/>
             <h1>{Friend?.Username}</h1>
           </div>

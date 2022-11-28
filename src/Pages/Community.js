@@ -41,7 +41,7 @@ function Community() {
               <div className='h-auto flex-shrink-0 w-[25%] rounded-xl items-center justify-between flex flex-col px-3 py-3 bg-darkbg'>
                 <div className="w-full h-auto flex gap-3 items-center pb-2">
                 <img src={alluser.ProfilePhoto} className="w-14 h-14 rounded-full"/>
-                <h1>{alluser.Username}<br/><span className='text-white/50 text-sm'>{alluser.Bio}</span></h1>
+                <h1 className='w-full flex-wrap'>{alluser.Username}<br/><span className='text-white/50 text-sm w-full flex-wrap'>{alluser.Bio}</span></h1>
                 </div>
                 <button className="w-full h-[40px] bg-blue rounded-xl hover:opacity-90" onClick={() => CreateMessage(alluser)}>{loading ? <CircularProgress size={21}/>:"Send Message"}</button>
               </div>
@@ -52,10 +52,10 @@ function Community() {
           <div className="w-[95%] h-auto flex flex-row gap-5 flex-wrap">
           {data?.users[user?.id]?.Following?.map((alluser) => {
             return (
-              <div className='h-auto flex-shrink-0 w-[25%] rounded-xl items-center justify-between flex flex-col px-3 py-3 bg-darkbg'>
+              <div key={alluser.ProfilePhoto} className='h-auto flex-shrink-0 w-[25%] rounded-xl items-center justify-between flex flex-col px-3 py-3 bg-darkbg'>
                 <div className="w-full h-auto flex gap-3 items-center pb-2">
                 <img src={alluser.ProfilePhoto} className="w-14 h-14 rounded-full"/>
-                <h1>{alluser.Username}<br/><span className='text-white/50 text-sm'>{alluser.Bio}</span></h1>
+                <h1 className='w-full flex-wrap'>{alluser.Username}<br/><span className='text-white/50 text-sm w-full flex-wrap'>{alluser.Bio}</span></h1>
                 </div>
                 <button className="w-full h-[40px] bg-blue rounded-xl hover:opacity-90" onClick={() => CreateMessage()}>{loading ? <CircularProgress size={21}/>:"Send Message"}</button>
               </div>

@@ -19,7 +19,7 @@ function Notifications() {
           <hr/>
           {data?.users[user?.id]?.Notifications?.map((Notification) => {
           return (
-          <>
+          <div key={Notification?.Category+Notification?.UserId+Notification?.Text}>
           <h1 className='font-semibold text-lg flex items-center py-3'>
             {Notification?.Category === "Hi" ? "👋" : Notification?.Category === "Follow" ? "🥳":null}
             <span className=''>
@@ -28,7 +28,7 @@ function Notifications() {
             <span className='text-sm font-medium'>{Notification?.Text}</span>
           </h1>
           <hr/>
-          </> 
+          </div> 
           )})}
         </div>
       </div>

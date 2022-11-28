@@ -34,7 +34,7 @@ function Messages() {
       <div className="w-full h-[calc(100%-105px)] overflow-y-auto flex flex-col">
         {data?.Chat?.map((message) => {
           return (
-            <div className={`w-full h-auto text-white flex items-end gap-2 py-2  ${message?.uid === user?.uid ? "justify-end":"justify-start"}`}>
+            <div key={message?.Message} className={`w-full h-auto text-white flex items-end gap-2 py-2  ${message?.uid === user?.uid ? "justify-end":"justify-start"}`}>
               {message?.uid !== user?.uid && <img src={data?.users[message?.id].ProfilePhoto} className="w-10 h-10 rounded-full"/>}
               <h1 className={`p-2 px-4 rounded-2xl ${message?.uid === user?.uid ? "bg-blue rounded-br-md":"bg-darkbg rounded-bl-md"}`}>{message?.Message}</h1>
               {message?.uid === user?.uid && <img src={data?.users[message?.id].ProfilePhoto} className="w-10 h-10 rounded-full"/>}

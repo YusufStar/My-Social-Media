@@ -24,7 +24,6 @@ function Login() {
         get(child(dbRef, `/users`)).then((snapshot) => {
           if (snapshot.exists()) {
             const data = snapshot.val()
-            console.log(data)
             const newdata = data.filter((user) => {
               return user.uid === uid
             })
@@ -33,11 +32,9 @@ function Login() {
               setuser(newdata[0])
             }, 250);
           } else {
-            console.log("No data available");
           }
         }).catch((error) => {
           setLoading(false)
-          console.log(error.code, error.message);
         });
   })
   }

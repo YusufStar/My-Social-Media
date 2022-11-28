@@ -58,9 +58,8 @@ function Home() {
         <div className="h-auto w-full min-h-screen items-center flex flex-col gap-3">
         {data?.users?.map((allusers) => {
             return (
-              <>
+              <div key={allusers?.Username}>
               {allusers?.posts?.map((post, i) => {
-                console.log(post)
                 return(
                   <div key={`${allusers.uid}${post.id}${i}`} className='w-[600px] pt-5 py-3 px-3 bg-darkbg rounded-xl flex flex-col'>
                   <div className="h-auto w-full flex gap-3 items-center">
@@ -74,7 +73,7 @@ function Home() {
                   <button className='w-[37px] h-[37px]'><img src={sendSvg} onClick={() => postreply(allusers, i)} className="rounded-xl p-2 cursor-pointer hover:opacity-70 bg-blue"/></button>
                   </div>
                   {post?.replies?.map((rply) => (
-                      <div className='w-full h-auto flex gap-3 py-2 px-3 bg-darkprimary mt-2 rounded-xl flex-wrap items-center'>
+                      <div key={rply.Comment} className='w-full h-auto flex gap-3 py-2 px-3 bg-darkprimary mt-2 rounded-xl flex-wrap items-center'>
                         <img src={rply.ProfilePhoto} className="w-10 h-10 rounded-full"/>
                         <h1 className='text-sm w-[90%] text-white/60'>{rply.Username}</h1>
                         <h1 className='w-full h-auto text-sm px-3 textdarktext'>{rply.Comment}</h1>
@@ -82,7 +81,7 @@ function Home() {
                   ))}
                   </div>
                 )})}
-              </>
+              </div>
             )
           })}
       </div>
